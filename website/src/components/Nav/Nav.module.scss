@@ -1,0 +1,157 @@
+$color: rgb(243, 134, 37);
+
+.Nav {
+  padding-bottom: 16px;
+  z-index: 2;
+  text-align: left;
+
+  &__Close {
+    display: none;
+  }
+  &__Title {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+
+  &__SubTitle {
+    color: #b4b4b4;
+    letter-spacing: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  &__Accordion {
+    color: rgb(255, 255, 255, 90%);
+    &__Warper {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      &:hover {
+        color: $color;
+        transition: 0.5s;
+      }
+    }
+    i {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    &__Title {
+      cursor: pointer;
+      text-transform: capitalize;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.1px;
+      margin: 0;
+    }
+
+    &__Content {
+      list-style-type: none;
+      margin: 0;
+      max-height: 0px;
+      overflow: hidden;
+      transition: 0.5s;
+      padding-left: 0.5em;
+      &__Item {
+        color: rgb(255, 255, 255, 90%);
+        cursor: pointer;
+        border-left: 5px solid black;
+        letter-spacing: 0px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        padding: 9px 19px;
+
+        &:hover {
+          background-color: white;
+          transition: 0.5s;
+          color: black;
+        }
+
+        &__Active {
+          border-color: $color;
+        }
+        span:first-child {
+          width: 20px;
+          min-width: 20px;
+          height: 20px;
+          background: rgb(195, 197, 198);
+          border-radius: 100px;
+        }
+      }
+
+      &__Active {
+        max-height: 500px;
+      }
+    }
+  }
+
+  &__List {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+
+    &__Item {
+      color: rgb(255, 255, 255, 90%);
+      cursor: pointer;
+      text-transform: capitalize;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.1px;
+      margin: 0;
+      padding: 9px 19px;
+      border-left: 5px solid black;
+      &:hover {
+        color: $color;
+        transition: 0.5s;
+        border-color: $color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Nav {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    transition: 0.5s;
+    padding: 2em 2.5em;
+
+    &__Close {
+      display: block;
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      color: white;
+      cursor: pointer;
+      font-size: 1.3em;
+    }
+
+    &__Active {
+      left: -50em !important;
+    }
+  }
+}

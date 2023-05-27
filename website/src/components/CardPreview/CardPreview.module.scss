@@ -1,0 +1,703 @@
+$color: rgb(243, 134, 37);
+
+.CardPreview {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  bottom: -25em;
+  visibility: hidden;
+  left: 0;
+  background-color: white;
+  z-index: 99;
+  border-top: 5px solid $color;
+  transition: 0.5s;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  section {
+    margin: 0 !important;
+  }
+
+  &__Head {
+    background-color: rgb(242, 246, 253);
+    min-height: 300px;
+    padding: 2em 3em;
+    &__Breadcrumbs {
+      display: flex;
+      background-color: rgb(242, 246, 253);
+      align-items: center;
+      gap: 0.5em;
+      cursor: pointer;
+      color: black;
+
+      i {
+        font-size: 1.3em;
+
+        &:first-child {
+          border-radius: 3px;
+          padding: 0.5em 0.7em;
+          &:hover {
+            background-color: white;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+
+    &__Content {
+      margin-top: 3em;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 6em;
+
+      &__Information {
+        max-width: 55%;
+        &__Heading {
+          color: #1f1f1f;
+          font-size: 2.75rem;
+          line-height: 3.25rem;
+          font-family: "Source Sans Pro", Arial, sans-serif;
+          letter-spacing: -0.1px;
+          font-weight: 600;
+        }
+
+        &__Desc {
+          color: #1f1f1f;
+          letter-spacing: 0;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          font-family: "Source Sans Pro", Arial, sans-serif;
+          font-weight: 400;
+        }
+
+        &__Row {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+
+          &__Title {
+            margin: 0.5em 0;
+            font-size: 0.8em;
+            border-radius: 0;
+            background-color: rgb(236, 235, 152);
+          }
+
+          &__RatingsTitle {
+            color: rgb(180, 105, 14);
+          }
+
+          &__IconStar {
+            color: rgb(229, 152, 25);
+          }
+
+          &__RatingsCalculator,
+          &__RatingsCount,
+          &__Instructor {
+            color: #5624d0;
+            font-weight: 700;
+          }
+
+          &__Instructor {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &__Overview {
+        padding: 16px 32px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 32px -8px rgba(0, 0, 0, 0.5);
+        min-width: 350px;
+        right: 4em;
+        button {
+          width: 100%;
+          border-radius: 0;
+          margin: 1em 0 0;
+          transition: 0.5s;
+
+          &:last-child {
+            margin-top: 0.5em;
+          }
+        }
+
+        &__Add {
+          color: white;
+          background-color: rgb(164, 53, 240);
+
+          &:hover {
+            border-color: rgb(164, 53, 240);
+            background-color: rgb(164, 53, 240, 90%);
+          }
+        }
+
+        &__Checkout {
+          border: 1px solid rgb(164, 53, 240);
+          color: rgb(31, 31, 31);
+
+          &:hover {
+            border-color: rgb(164, 53, 240);
+            background-color: rgb(164, 53, 240, 30%);
+          }
+        }
+
+        &__Head {
+          border-bottom: 3px solid rgb(229, 231, 232);
+          &__Title {
+            color: #1f1f1f;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.1px;
+            margin-bottom: 0.3em;
+          }
+
+          &__Desc {
+            margin-top: 0;
+            color: #636363;
+            letter-spacing: 0;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            font-weight: 400;
+          }
+        }
+
+        &__Mid {
+          margin-top: 1em;
+          &__Col {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            padding: 8px 0px;
+            h6 {
+              margin: 0;
+              color: #1f1f1f;
+              font-size: 1.25rem;
+              line-height: 1.75rem;
+              font-family: "Source Sans Pro", Arial, sans-serif;
+              font-weight: 600;
+              letter-spacing: -0.1px;
+            }
+
+            p {
+              color: #636363;
+              letter-spacing: 0;
+              font-size: 0.875rem;
+              line-height: 1.25rem;
+              font-family: "Source Sans Pro", Arial, sans-serif;
+              font-weight: 400;
+              margin: 0;
+            }
+            &:first-child {
+              color: $color;
+              span {
+                color: $color;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__Active {
+    visibility: visible;
+    bottom: 0;
+  }
+
+  &__WhatLearn {
+    max-width: 700px;
+    text-align: left;
+    padding: 0 3em;
+
+    &__Title {
+      color: #1f1f1f;
+      margin-bottom: 1em !important;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.1px;
+    }
+
+    &__List {
+      list-style-type: none;
+      flex-wrap: wrap;
+      display: flex;
+      box-sizing: border-box;
+      row-gap: 2em;
+      column-gap: 2em;
+      padding: 0;
+
+      &__Item {
+        max-width: 310px;
+        margin: -8px;
+        display: flex;
+        flex-direction: row;
+        gap: 0.8em;
+        text-align: left;
+        align-items: first baseline;
+        letter-spacing: 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+
+        i {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  &__Nav {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+    padding: 1em 0;
+    margin-left: 3em;
+    margin-top: 0;
+    max-width: 700px;
+
+    border-bottom: 3px solid rgb(229, 231, 232);
+
+    &__Item {
+      cursor: pointer;
+      display: block;
+      border-radius: 4px;
+      color: #1f1f1f;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      padding: 10px 12px;
+      font-weight: 600;
+      -webkit-text-decoration: none;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: rgb(245, 247, 248);
+        color: rgb(0, 86, 210);
+      }
+    }
+  }
+
+  &__Skills {
+    max-width: 700px;
+    text-align: left;
+    padding: 0 3em 2em;
+
+    &__List {
+      list-style-type: none;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 0;
+      margin: 0;
+      &__Item {
+        background-color: #e5e7e8;
+        border-color: #e5e7e8;
+        align-items: center;
+        border-radius: 4px;
+        line-height: 1.5;
+        color: #373a3c;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        padding: 0.1em 0.5em;
+      }
+    }
+  }
+
+  &__ViewLess {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    color: rgb(0, 86, 210);
+  }
+
+  &__CoursesContent {
+    border-top: 1px solid rgb(229, 231, 232);
+    padding: 0 3em;
+
+    &__List {
+      margin-top: 3em;
+      list-style: none;
+      padding: 0;
+      &__Item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1em;
+        padding-bottom: 3.5em;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgb(229, 231, 232);
+        }
+        &__Block {
+          min-width: 30%;
+          color: #000;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          row-gap: 2em;
+          justify-content: center;
+          &__Week {
+            letter-spacing: 4px;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            font-weight: 400;
+          }
+
+          &__Number {
+            font-size: 2.75rem;
+            line-height: 3.25rem;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            letter-spacing: -0.1px;
+            font-weight: 400;
+          }
+        }
+
+        &__Content {
+          text-align: left;
+
+          &__HoursCompletion {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+
+            &__Info {
+              font-size: 0.875rem;
+              line-height: 1.5rem;
+              color: #6e767f;
+            }
+
+            &:first-child {
+              svg {
+                border-radius: 100%;
+                padding: 0.7em;
+                fill: white;
+                max-width: 20px;
+                background-image: linear-gradient(
+                  90deg,
+                  rgb(252, 110, 81),
+                  rgb(246, 187, 66)
+                );
+              }
+            }
+
+            &:last-child {
+              svg {
+                border-radius: 100%;
+                padding: 0.7em;
+                fill: white;
+                max-width: 20px;
+                background-image: linear-gradient(
+                  90deg,
+                  rgb(72, 207, 173),
+                  rgb(59, 175, 218)
+                );
+              }
+            }
+          }
+
+          &__Info {
+            &__Title {
+              font-size: 20px;
+              line-height: 24px;
+              margin-bottom: 1.5rem !important;
+              font-weight: 300;
+            }
+
+            &__Desc {
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__DescCourses {
+    max-width: 700px;
+    text-align: left;
+    padding: 0 3em 2em;
+
+    &__Desc {
+      letter-spacing: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+      max-height: 300px;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+
+    button {
+      margin-top: 1.5em;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      color: #5624d0;
+    }
+
+    &__Active__Desc {
+      max-height: 1000vh;
+    }
+  }
+
+  &__Instructor {
+    border-top: 1px solid rgb(229, 231, 232);
+    text-align: left;
+    padding: 0 3em 2em;
+
+    &__Row {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5em;
+    }
+    &__Info {
+      &__Link {
+        color: #5624d0;
+        text-decoration: underline;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02rem;
+        font-size: 1.3em;
+      }
+
+      &__Desc {
+        margin: 0.5em 0;
+      }
+
+      &__Warper {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        color: #000;
+        &__Picture {
+          border-radius: 100%;
+          max-width: 150px;
+        }
+
+        &__Info {
+          p {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-weight: 400;
+            line-height: 1.4;
+            font-size: 0.9em;
+          }
+        }
+      }
+
+      &__Introduce {
+        transition: 0.5s;
+        max-height: 200px;
+        overflow: hidden;
+      }
+
+      button {
+        margin-top: 1.5em;
+        color: #5624d0;
+      }
+      &__Active__Introduce {
+        max-height: 500px;
+      }
+    }
+  }
+
+  &__Review {
+    text-align: left;
+    padding: 0 1.5em 2em;
+
+    &__Title {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+      font-size: 1.3em;
+      color: #000;
+
+      i {
+        color: $color;
+      }
+    }
+
+    &__List {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2em;
+      row-gap: 2em;
+    }
+
+    &__Item {
+      max-width: 350px;
+      &__Warper__User {
+        display: flex;
+        gap: 1em;
+        flex-direction: row;
+        align-items: center;
+
+        &__Picture {
+          max-width: 54px;
+          max-height: 54px;
+          border-radius: 100%;
+        }
+
+        &__Info {
+          &__Title {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02rem;
+            font-size: 1em;
+            margin: 0;
+          }
+
+          &__Warper {
+            display: flex;
+            row-gap: 0.5em;
+            align-items: center;
+            gap: 1em;
+
+            &__Star {
+              color: $color;
+            }
+
+            &__CreateDate {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      &__Desc {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+
+    button {
+      color: #5624d0;
+    }
+  }
+
+  &__Recommend {
+    padding: 0 1.5em;
+    text-align: left;
+  }
+
+  &__Active__Nav__Item {
+    background-color: rgb(245, 247, 248);
+    color: rgb(0, 86, 210);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .CardPreview {
+    &__Head__Content__Overview {
+      position: fixed;
+      max-width: 350px;
+      transition: 0.5s;
+    }
+
+    &__Review {
+      padding: 0 3em 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .CardPreview {
+    &__Head {
+      padding: 1em 16px;
+      padding-bottom: 0px;
+      &__Breadcrumbs {
+        font-size: 12px;
+      }
+
+      &__Content {
+        flex-direction: column;
+
+        &__Information {
+          padding: 1em 0;
+          max-width: 100%;
+
+          img {
+            max-height: 45px;
+          }
+          &__Heading {
+            font-size: 2rem;
+            line-height: 2.5rem;
+          }
+
+          &__Desc {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+
+          &__Col {
+            flex-direction: column;
+            align-items: start;
+          }
+
+          &__Row {
+            &__RatingsCalculator,
+            &__RatingsCount,
+            &__Instructor {
+              font-weight: 700;
+              font-size: 0.875rem;
+              line-height: 1.25rem;
+            }
+          }
+        }
+
+        &__Overview {
+          min-width: 100%;
+          padding-bottom: 0px;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &__WhatLearn {
+      padding-top: 0px;
+    }
+
+    &__CoursesContent {
+      &__List {
+        &__Item {
+          flex-direction: column;
+          row-gap: 2em;
+          &__Block {
+            row-gap: 0.5em;
+          }
+        }
+      }
+    }
+
+    &__Instructor {
+      &__Row {
+        flex-direction: column;
+      }
+      &__Info {
+        &__Warper {
+          flex-direction: column;
+          &__Picture {
+            margin-top: 1.5em;
+            max-width: 120px;
+          }
+        }
+      }
+    }
+
+    &__WhatLearn,
+    &__CoursesContent,
+    &__Instructor,
+    &__DescCourses {
+      padding: 0 1.2em 2em;
+    }
+  }
+}

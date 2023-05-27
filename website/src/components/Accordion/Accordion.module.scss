@@ -1,0 +1,26 @@
+.Accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+  &__Title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #21aeca;
+  }
+
+  &__Title:hover {
+    background-color: #3ab4cc;
+  }
+
+  &__Content {
+    background-color: #39b9d2;
+    max-height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+
+    &__Active {
+      max-height: 500px;
+    }
+  }
+}

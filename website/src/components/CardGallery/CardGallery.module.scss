@@ -1,0 +1,48 @@
+.CardGallery {
+  height: fit-content;
+  &__Heading {
+    text-align: left;
+    font-size: 1.4em;
+    color: rgb(243, 134, 37);
+    cursor: pointer;
+  }
+
+  &__List_Warper {
+    position: relative;
+    padding: 1em 2.5em;
+
+    &__Button {
+      font-size: 2em;
+      color: rgb(243, 134, 37);
+
+      &__Previous {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      &__Next {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__List {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    align-items: center;
+    gap: 1em;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

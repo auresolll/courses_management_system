@@ -1,0 +1,18 @@
+.Notes {
+  padding: 0 2em;
+  text-align: left;
+  &__Heading {
+    color: white;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+    margin: 32px 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Notes {
+    padding: 0;
+  }
+}

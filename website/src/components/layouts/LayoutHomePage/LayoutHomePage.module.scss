@@ -1,0 +1,62 @@
+.LayoutHomePage {
+  section {
+    margin: 5.5em 0;
+  }
+  &__Image__Slider {
+    $duration: 30s;
+    max-width: 100%;
+    min-height: 800px;
+    position: relative;
+
+    z-index: 1;
+
+    &__Block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      visibility: hidden;
+      animation: ImageSlider $duration infinite;
+    }
+
+    &__Block:nth-child(1) {
+      animation-delay: calc($duration / 3);
+    }
+
+    &__Block:nth-child(2) {
+      animation-delay: calc($duration * 2 / 3);
+    }
+
+    @keyframes ImageSlider {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 99;
+      }
+      30% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 99;
+      }
+      33.333% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .LayoutHomePage {
+    &__Image__Slider {
+      min-height: 600px;
+      margin-left: 5em !important;
+      margin-right: 5em !important;
+    }
+  }
+}

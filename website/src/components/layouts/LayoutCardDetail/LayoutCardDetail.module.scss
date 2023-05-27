@@ -1,0 +1,40 @@
+$color: rgb(243, 134, 37);
+
+.LayoutCardDetail {
+  &__Main {
+    margin-top: 2em;
+    &__Section {
+      display: flex;
+      overflow: hidden;
+      flex-flow: row nowrap;
+      -webkit-box-pack: start;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .LayoutCardDetail {
+    &__Main {
+      &__Section {
+        &__Nav {
+          flex-grow: 0;
+          max-width: 25%;
+          flex-basis: 25%;
+          overflow-y: auto;
+          max-height: 100vh;
+        }
+        &__Content {
+          flex-grow: 0;
+          max-width: 100%;
+          overflow-y: auto;
+          flex-basis: 100%;
+          min-height: 100vh;
+        }
+      }
+    }
+  }
+}

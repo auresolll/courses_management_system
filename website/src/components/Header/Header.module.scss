@@ -1,0 +1,126 @@
+$color: rgb(243, 134, 37);
+.Header {
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+
+  &__Logo {
+    max-width: 54px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    $duration: 10s;
+
+    span {
+      animation: fadeIn $duration infinite;
+    }
+    span:nth-child(1) {
+      animation-delay: calc($duration / 3);
+    }
+    span:nth-child(2) {
+      animation-delay: calc($duration * 2 / 3);
+    }
+    @keyframes fadeIn {
+      0% {
+        color: $color;
+      }
+      30% {
+        color: $color;
+      }
+      33.333% {
+        color: white;
+      }
+      100% {
+        color: white;
+      }
+    }
+  }
+
+  &__Nav__List {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    gap: 1em;
+  }
+
+  &__Toggle {
+    display: none;
+  }
+  &__Close {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    &__Nav__List {
+      &__Item {
+        padding: 0.5em 1em;
+        cursor: pointer;
+        border-left: 5px solid black;
+        &:hover {
+          border-left: 5px solid $color;
+          transition: 0.5s;
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .Header {
+    position: relative;
+
+    &__Toggle {
+      display: block;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    &__Close {
+      display: block;
+      position: fixed;
+      top: 0.5em;
+      right: 0.5em;
+      font-size: 1.3em;
+    }
+    &__Nav__List {
+      position: fixed;
+      display: block;
+      top: -20px;
+      clip-path: circle(0%);
+      right: 0;
+      min-height: 500px;
+      border-bottom: 5px solid $color;
+      width: 100%;
+      z-index: 99;
+      color: black;
+      transition: 0.5s;
+
+      &__Item {
+        padding: 9px 19px;
+        cursor: pointer;
+
+        &:hover {
+          color: $color;
+          transition: 0.5s;
+        }
+
+        &:first-child {
+          margin-top: 6em;
+        }
+      }
+    }
+
+    .active {
+      clip-path: circle(100%);
+      background-color: white;
+    }
+  }
+}
