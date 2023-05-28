@@ -28,7 +28,7 @@ const Grades: FC<GradesProps> = () => (
         </p>
       </div>
       <div className={styles.Grades__Warper__Content__Warper}>
-        {[1, 2, 3, 4, 5].map((grade) => (
+        {[1, 2, 3, 4, 5].map(() => (
           <div className={styles.Grades__Warper__Content} key={generateUUID()}>
             <p className={styles.Grades__Warper__Heading__Row}>
               {IconLocked}

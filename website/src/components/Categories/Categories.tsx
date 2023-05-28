@@ -12,7 +12,7 @@ const Categories: FC<CategoriesProps> = ({ title, layout }) => (
     <h1 className={styles.Categories__Title}>{title}</h1>
     <div className={styles.Categories__List}>
       {layout === 1 &&
-        [1, 2, 3, 4, 5].map((x) => (
+        [1, 2, 3, 4, 5].map(() => (
           <div className={styles.Categories__List__Item} key={generateUUID()}>
             <img
               src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/data_science.png?auto=format%2Ccompress&dpr=1&fit=crop&h=100"
@@ -30,7 +30,7 @@ const Categories: FC<CategoriesProps> = ({ title, layout }) => (
         ))}
 
       {layout === 2 &&
-        [1, 2, 3, 4, 5].map((item) => (
+        [1, 2, 3, 4, 5].map(() => (
           <p className={styles.Categories__List__Item_2} key={generateUUID()}>
             Front End Web Development
           </p>

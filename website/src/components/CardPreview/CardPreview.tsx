@@ -270,7 +270,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
         </h5>
 
         <ul className={styles.CardPreview__WhatLearn__List}>
-          {[1, 2, 4, 5].map((item) => (
+          {[1, 2, 4, 5].map(() => (
             <li
               className={styles.CardPreview__WhatLearn__List__Item}
               key={generateUUID()}
@@ -291,7 +291,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
         </h5>
 
         <ul className={styles.CardPreview__Skills__List}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(() => (
             <li
               className={styles.CardPreview__Skills__List__Item}
               key={generateUUID()}
@@ -314,7 +314,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
           </h5>
 
           <ul className={styles.CardPreview__CoursesContent__List}>
-            {[1, 2, 3, 4, 5].map((item) => (
+            {[1, 2, 3, 4, 5].map(() => (
               <li
                 className={styles.CardPreview__CoursesContent__List__Item}
                 key={generateUUID()}
@@ -336,7 +336,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
                       styles.CardPreview__CoursesContent__List__Item__Block__Number
                     }
                   >
-                    {item}
+                    {}
                   </span>
                 </div>
 
@@ -413,7 +413,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
         <section className={styles.CardPreview__Instructor}>
           <h5 className={styles.CardPreview__WhatLearn__Title}>Instructor</h5>
           <div className={styles.CardPreview__Instructor__Row}>
-            {[1, 2].map((item) => {
+            {[1, 2].map(() => {
               const [isReadingMoreInstructor, setIsReadingMoreInstructor] =
                 useState(false);
 
@@ -502,7 +502,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
             <span>4.8 điểm đánh giá khóa học 1k lượt đánh giá</span>
           </h5>
           <div className={styles.CardPreview__Review__List}>
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {[1, 2, 3, 4, 5, 6].map(() => (
               <div
                 className={styles.CardPreview__Review__Item}
                 key={generateUUID()}
