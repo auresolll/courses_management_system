@@ -5,9 +5,9 @@ const LazyNav = lazy(() => import("./Nav"));
 const Nav = (
   props: JSX.IntrinsicAttributes & {
     children?: React.ReactNode;
-    layout: number;
-    isOpenMenu: boolean;
-    setIsOpenMenu: Dispatch<SetStateAction<boolean>>;
+    layout: 0;
+    isOpen: Boolean;
+    setIsOpen: Dispatch<SetStateAction<Boolean>>;
   }
 ) => (
   <Suspense fallback={null}>

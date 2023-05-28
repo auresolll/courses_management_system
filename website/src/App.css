@@ -68,3 +68,9 @@
 .active__nav__link span:first-child {
   background-color: var(--color) !important;
 }
+
+
+.loading-on-sub-page {
+  top: 35% !important;
+  left: 50% !important;
+}

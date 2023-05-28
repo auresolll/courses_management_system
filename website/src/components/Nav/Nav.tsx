@@ -4,21 +4,22 @@ import { generateUUID } from "../../helper";
 import styles from "./Nav.module.scss";
 
 interface NavProps {
-  layout: number;
-  isOpenMenu: boolean;
-  setIsOpenMenu: Dispatch<SetStateAction<boolean>>;
+  children?: React.ReactNode;
+  layout: 0;
+  isOpen: Boolean;
+  setIsOpen: Dispatch<SetStateAction<Boolean>>;
 }
 interface LayoutCardDetailNavAccordionProps {}
 
 const LayoutCardDetailNavAccordion: FC<
   LayoutCardDetailNavAccordionProps
 > = ({}) => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isOpenMenu, setIsOpen] = useState(false);
   return (
     <div className={styles.Nav__Accordion}>
       <div
         className={styles.Nav__Accordion__Warper}
-        onClick={() => setIsOpenMenu(!isOpenMenu)}
+        onClick={() => setIsOpen(!isOpenMenu)}
       >
         <i className="ri-arrow-down-s-line"></i>
         <h5 className={styles.Nav__Accordion__Title}>Course Management</h5>
@@ -53,13 +54,13 @@ const LayoutCardDetailNavAccordion: FC<
 };
 
 const TEXT_NAVIGATION = ["Grades", "Notes", "Discussion Forums", "Course Info"];
-const Nav: FC<NavProps> = ({ layout, isOpenMenu, setIsOpenMenu }) => {
+const Nav: FC<NavProps> = ({ layout, isOpen, setIsOpen }) => {
   const layoutMain = {
     0: (
-      <nav className={`${styles.Nav} ${!isOpenMenu && styles.Nav__Active}`}>
+      <nav className={`${styles.Nav} ${!isOpen && styles.Nav__Active}`}>
         <i
           className={`ri-close-circle-fill ${styles.Nav__Close}`}
-          onClick={() => setIsOpenMenu(false)}
+          onClick={() => setIsOpen(false)}
         ></i>
         <h3 className={styles.Nav__Title}>
           IBM Full Stack Software Developer Professional Certificate

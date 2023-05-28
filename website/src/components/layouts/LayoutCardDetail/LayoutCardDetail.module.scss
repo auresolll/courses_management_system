@@ -12,6 +12,10 @@ $color: rgb(243, 134, 37);
       width: 100%;
       height: 100%;
       z-index: 1;
+
+      &__Content {
+        position: relative;
+      }
     }
   }
 }
@@ -33,6 +37,19 @@ $color: rgb(243, 134, 37);
           overflow-y: auto;
           flex-basis: 100%;
           min-height: 100vh;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LayoutCardDetail {
+    &__Main {
+      &__Section {
+        &__Content {
+          width: 100vw;
+          height: 100vh;
         }
       }
     }

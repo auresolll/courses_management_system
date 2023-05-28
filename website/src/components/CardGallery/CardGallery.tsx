@@ -1,11 +1,10 @@
 import React, { FC, useState } from "react";
-import { Tooltip } from "react-tooltip";
 import { generateUUID } from "../../helper";
 import Card from "../Card/Card.lazy";
 import styles from "./CardGallery.module.scss";
 
 interface CardGalleryProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 const FULL_WIDTH_CARD = 50;
 
