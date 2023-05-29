@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { generateUUID } from "../../../helper";
 import ListVideos from "../../ListVideos/ListVideos.lazy";
 import Video from "../../Video/Video.lazy";
