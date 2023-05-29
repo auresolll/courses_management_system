@@ -45,7 +45,7 @@ $color: rgb(243, 134, 37);
     }
 
     h1 {
-      color: white;
+      color: rgb(0, 0, 0);
       cursor: pointer;
     }
 
@@ -54,7 +54,7 @@ $color: rgb(243, 134, 37);
     }
 
     p {
-      color: rgb(255, 255, 255, 80%);
+      color: rgba(0, 0, 0, 0.8);
       line-height: 26px;
     }
 
@@ -84,7 +84,7 @@ $color: rgb(243, 134, 37);
         border: 2px solid $color;
         outline: none;
         background-color: initial;
-        color: white;
+        color: rgb(0, 0, 0);
 
         &:hover {
           background-color: rgb(243, 134, 37, 10%);

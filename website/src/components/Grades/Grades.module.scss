@@ -3,10 +3,10 @@ $color: rgb(243, 134, 37);
 .Grades {
   padding: 0 2em;
   min-width: 800px;
+  color: rgb(0, 0, 0);
 
   text-align: left;
   &__Heading {
-    color: white;
     font-size: 1.75rem;
     line-height: 2.25rem;
     font-weight: 600;
@@ -15,13 +15,12 @@ $color: rgb(243, 134, 37);
   }
 
   &__Warper {
-    color: white;
     &__Heading {
       display: flex;
       flex-direction: row;
       -webkit-box-align: center;
       align-items: center;
-      border-bottom: 1px solid rgb(255, 255, 255, 90%);
+      border-bottom: 1px solid rgb(238, 238, 238);
       padding: 12px 0px;
       margin-bottom: 12px;
       &__Row {
@@ -49,14 +48,17 @@ $color: rgb(243, 134, 37);
 
     &__Content {
       width: 100%;
-
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 0.5em;
       padding-left: 0.6em;
-      border: 1px solid rgb(255, 255, 255, 90%);
-
+      border: 1px solid rgb(238, 238, 238);
+      color: rgb(31, 31, 31);
+      letter-spacing: 0px;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 400;
       &__Col {
         display: flex;
         flex-direction: column;

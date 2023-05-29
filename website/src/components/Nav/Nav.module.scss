@@ -9,7 +9,7 @@ $color: rgb(243, 134, 37);
     display: none;
   }
   &__Title {
-    color: #ffffff;
+    color: #000000;
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: "Source Sans Pro", Arial, sans-serif;
@@ -27,7 +27,7 @@ $color: rgb(243, 134, 37);
   }
 
   &__Accordion {
-    color: rgb(255, 255, 255, 90%);
+    color: rgba(0, 0, 0, 0.9);
     &__Warper {
       display: flex;
       align-items: center;
@@ -61,9 +61,9 @@ $color: rgb(243, 134, 37);
       transition: 0.5s;
       padding-left: 0.5em;
       &__Item {
-        color: rgb(255, 255, 255, 90%);
+        color: rgba(0, 0, 0, 0.9);
         cursor: pointer;
-        border-left: 5px solid black;
+        border-left: 5px solid rgb(255, 255, 255);
         letter-spacing: 0px;
         font-size: 1rem;
         line-height: 1.5rem;
@@ -109,7 +109,7 @@ $color: rgb(243, 134, 37);
     flex-direction: column;
 
     &__Item {
-      color: rgb(255, 255, 255, 90%);
+      color: rgba(0, 0, 0, 0.9);
       cursor: pointer;
       text-transform: capitalize;
       font-size: 1rem;
@@ -119,7 +119,7 @@ $color: rgb(243, 134, 37);
       letter-spacing: -0.1px;
       margin: 0;
       padding: 9px 19px;
-      border-left: 5px solid black;
+      border-left: 5px solid rgb(255, 255, 255);
       &:hover {
         color: $color;
         transition: 0.5s;

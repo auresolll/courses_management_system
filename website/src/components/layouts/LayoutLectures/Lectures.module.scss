@@ -1,0 +1,18 @@
+.Lectures {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2em;
+
+  &__Warper__Videos {
+    max-height: 90vh;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Lectures {
+    grid-template-columns: 1fr;
+    &__Warper__Videos {
+      max-height: 48vh;
+    }
+  }
+}

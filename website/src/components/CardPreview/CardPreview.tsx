@@ -314,7 +314,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
           </h5>
 
           <ul className={styles.CardPreview__CoursesContent__List}>
-            {[1, 2, 3, 4, 5].map(() => (
+            {[1, 2, 3, 4, 5].map((item) => (
               <li
                 className={styles.CardPreview__CoursesContent__List__Item}
                 key={generateUUID()}
@@ -336,7 +336,7 @@ const CardPreviewContent: FC<CardPreviewContentProps> = () => {
                       styles.CardPreview__CoursesContent__List__Item__Block__Number
                     }
                   >
-                    {}
+                    {item}
                   </span>
                 </div>
 

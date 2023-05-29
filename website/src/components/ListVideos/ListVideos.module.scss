@@ -1,0 +1,67 @@
+.ListVideos {
+  text-align: left;
+  overflow: auto;
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 0.1px;
+  }
+  &__Heading {
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+  }
+
+  &__Warper {
+    list-style-type: none;
+    padding: 0;
+
+    &__Item {
+      padding: 9px 19px;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      cursor: pointer;
+      border-left: 5px solid white;
+      font-size: 0.9em;
+      line-height: 18px;
+      font-family: OpenSans, Arial, sans-serif;
+
+      &__Circle {
+        width: 18px;
+        height: 18px;
+        background-color: #cecece;
+        border-radius: 100%;
+        position: relative;
+      }
+      small {
+        color: #6b6b6b;
+      }
+      &__Title {
+        margin: 0;
+      }
+
+      &__Active {
+        border-color: rgb(44, 116, 203);
+        background-color: rgb(242, 246, 253);
+      }
+
+      &__HasLearn {
+        background-color: rgb(44, 116, 203);
+        &:before {
+          content: "\2713";
+          position: absolute;
+          top: 50%;
+          left: 20%;
+          transform: translateY(-50%);
+          color: rgb(255, 255, 255);
+        }
+      }
+      &:hover {
+        background-color: rgb(242, 246, 253);
+        transition: 0.5s;
+      }
+    }
+  }
+}

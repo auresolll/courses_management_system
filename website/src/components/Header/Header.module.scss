@@ -2,7 +2,7 @@ $color: rgb(243, 134, 37);
 .Header {
   display: flex;
   align-items: center;
-  color: white;
+  color: rgb(0, 0, 0);
   justify-content: space-between;
 
   &__Logo {
@@ -31,10 +31,10 @@ $color: rgb(243, 134, 37);
         color: $color;
       }
       33.333% {
-        color: white;
+        color: rgb(0, 0, 0);
       }
       100% {
-        color: white;
+        color: rgb(0, 0, 0);
       }
     }
   }
@@ -61,7 +61,7 @@ $color: rgb(243, 134, 37);
       &__Item {
         padding: 0.5em 1em;
         cursor: pointer;
-        border-left: 5px solid black;
+        border-left: 5px solid rgb(255, 255, 255);
         &:hover {
           border-left: 5px solid $color;
           transition: 0.5s;
