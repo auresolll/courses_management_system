@@ -1,10 +1,17 @@
 import { FC, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { generateUUID } from "../../helper";
 import styles from "./ListVideos.module.scss";
 
-interface ListVideosProps {}
+interface ListVideosProps {
+  lectures: string;
+}
 
-const ListVideos: FC<ListVideosProps> = () => {
-  const [isActive, setIsActive] = useState(2);
+const ListVideos: FC<ListVideosProps> = ({ lectures }) => {
+  const [isActive, setIsActive] = useState(Number(lectures));
+  const { name } = useParams();
+  const navigate = useNavigate();
+
   return (
     <div className={styles.ListVideos}>
       <h3 className={styles.ListVideos__Heading}>Danh sách Videos</h3>
@@ -15,7 +22,12 @@ const ListVideos: FC<ListVideosProps> = () => {
             className={`${styles.ListVideos__Warper__Item} ${
               isActive === item && styles.ListVideos__Warper__Item__Active
             }`}
-            onClick={() => setIsActive(item)}
+            key={generateUUID()}
+            onClick={() => {
+              setIsActive(item);
+              const PATH = `../${name}/lectures/${item}`;
+              navigate(PATH);
+            }}
           >
             <div>
               <p

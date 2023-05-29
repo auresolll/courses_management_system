@@ -65,8 +65,8 @@ $color: rgb(243, 134, 37);
         &:hover {
           border-left: 5px solid $color;
           transition: 0.5s;
-          background-color: white;
-          color: black;
+          color: white;
+          box-shadow: inset 200px 0 0 0 black;
         }
       }
     }

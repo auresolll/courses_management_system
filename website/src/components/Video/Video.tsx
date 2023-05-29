@@ -2,18 +2,23 @@ import { FC } from "react";
 import { ControlBar, Player } from "video-react";
 import "video-react/dist/video-react.css"; // import css
 import styles from "./Video.module.scss";
-//@ts-ignore
-interface VideoProps {}
+interface VideoProps {
+  video: {
+    id: string;
+    url: string;
+    name: string;
+  };
+}
 
-const Video: FC<VideoProps> = () => {
+const Video: FC<VideoProps> = ({ video }) => {
   return (
     <div className={styles.Video}>
-      <Player autoPlay src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+      <Player autoPlay src={video.url}>
         <ControlBar autoHide={false} className="my-class" />
       </Player>
 
       <h3 className={styles.Video__Heading}>
-        [Official Audio] Một Ngày Khác - Young H ft B Ray X Roy P
+        {video.id} {video.name}
       </h3>
       <div className={styles.Video__Transcript}></div>
     </div>
